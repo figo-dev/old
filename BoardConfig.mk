@@ -61,6 +61,9 @@ BOARD_USES_QCNE := false
 # Dexpreopt
 BOARD_USES_SYSTEM_OTHER_ODEX := true
 
+# DPM
+BOARD_USES_DPM := false
+
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2019-05-05
 
