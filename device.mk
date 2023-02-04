@@ -60,6 +60,11 @@ PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl \
     android.hardware.broadcastradio@1.0-service \
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service \
+
 # GNSS/GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0 \
@@ -71,6 +76,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion \
     libvulkan \
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service \
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-service.huawei \
+    libskeymaster4device.vendor:64 \
+    libkeymaster4support.vendor:64 \
+    libkeymaster4_1support.vendor:64 \
+
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/huawei/figo/figo-vendor.mk)

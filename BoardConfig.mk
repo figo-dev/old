@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+BOARD_VENDOR := huawei
+
 DEVICE_PATH := device/huawei/figo
 
 # 64 Bit
@@ -128,6 +130,9 @@ TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
 TARGET_USERIMAGES_USE_F2FS := true
+
+# Keymaster
+TARGET_KEYMASTER_VARIANT := huawei
 
 # Platform
 HISI_TARGET_PRODUCT := hi6250
