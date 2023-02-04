@@ -177,5 +177,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Treble
 BOARD_VNDK_VERSION := current
 
+# Verified Boot
+BOARD_AVB_ENABLE := false
+
 # Get non-open-source specific aspects
 include vendor/huawei/figo/BoardConfigVendor.mk
