@@ -93,6 +93,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.hi6250 \
+    fstab.modem \
+    recovery.fstab \
+
+# Recovery
+AB_OTA_UPDATER := false
+
+PRODUCT_PACKAGES += \
+    init.recovery.hi6250.rc \
     
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/huawei/figo/figo-vendor.mk)

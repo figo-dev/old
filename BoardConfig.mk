@@ -95,15 +95,14 @@ DEVICE_MATRIX_FILE := \
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00400000
-BOARD_KERNEL_CMDLINE := loglevel=4 initcall_debug=n page_tracker=on unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538
+BOARD_KERNEL_CMDLINE := loglevel=4 coherent_pool=512K page_tracker=on slub_min_objects=12 unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x07A00000
-BOARD_RAMDISK_OFFSET := 0x10000000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+BOARD_MKBOOTIMG_ARGS := --tags_offset 0x07A00000 --kernel_offset 0x00080000 --ramdisk_offset 0x10000000 --os_version 9
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/huawei/hi6250
+TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := merge_hi6250_defconfig
+TARGET_KERNEL_SOURCE := kernel/huawei/hi6250
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
@@ -145,6 +144,13 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Recovery
+TARGET_NO_RECOVERY := false
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/vendor/etc/fstab.hi6250
+TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+TARGET_USES_MKE2FS := true
 
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2019-05-05
