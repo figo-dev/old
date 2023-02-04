@@ -47,6 +47,13 @@ PRODUCT_PACKAGES += \
 # Display
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.3 \
+    android.hardware.drm@1.3.vendor \
     
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/huawei/figo/figo-vendor.mk)
