@@ -160,5 +160,8 @@ SIM_COUNT := 2
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2019-05-05
 
+# Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # Get non-open-source specific aspects
 include vendor/huawei/figo/BoardConfigVendor.mk
