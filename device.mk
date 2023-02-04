@@ -66,6 +66,11 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1 \
     android.hardware.gnss@2.0 \
     android.hardware.gnss@2.1 \
+
+# Graphics
+PRODUCT_PACKAGES += \
+    libion \
+    libvulkan \
     
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/huawei/figo/figo-vendor.mk)
