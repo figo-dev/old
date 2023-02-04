@@ -35,6 +35,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Assert
 TARGET_OTA_ASSERT_DEVICE := figo
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
+
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2019-05-05
 
