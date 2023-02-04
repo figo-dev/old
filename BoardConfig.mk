@@ -55,6 +55,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# CnE
+BOARD_USES_QCNE := false
+
 # Security Patch Level
 VENDOR_SECURITY_PATCH := 2019-05-05
 
