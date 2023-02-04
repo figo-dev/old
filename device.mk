@@ -105,6 +105,12 @@ AB_OTA_UPDATER := false
 
 PRODUCT_PACKAGES += \
     init.recovery.hi6250.rc \
+
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5 \
+    android.hardware.radio.config@1.2 \
+    libxml2 \
     
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/huawei/figo/figo-vendor.mk)
